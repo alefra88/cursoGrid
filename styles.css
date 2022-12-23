@@ -140,3 +140,12 @@ img {
   background-color: aquamarine;
   grid-area: footer;
 }
+
+
+.grid-implicit {
+  width: 40%;
+  display: grid;
+  display: inline-grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(auto-fit,minmax(10px, 1fr));
+}
