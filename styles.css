@@ -210,11 +210,95 @@ img {
   grid-row: 3 / 5;
   /* Aquí aplicamos flexbox para poder ver el titulo del item */
   display: flex;
-  flex-flow: row-reverse;
+  flex-flow: row-reverse; 
 }
+
 
 .grid-layers .item:nth-child(5) {
   background-color: chartreuse;
   grid-column: 2 / 4;
   grid-row: 2 / 4;
+}
+
+
+/* Orden y aliniacion de grid items (childs) */
+
+.grid-order {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(2,1fr);
+}
+
+
+.grid-order .item:nth-child(5) {
+  /* default es 0 */
+  order: -1;
+}
+
+
+
+
+
+
+.grid-align {
+  display: grid;
+  grid-template-columns: repeat(3,200px);
+  grid-template-rows: repeat(2,200px);
+  justify-items: center;
+  justify-items: start;
+  justify-items: end;
+  justify-items: stretch;
+  align-items: start;
+  align-items: end;
+}
+
+.grid-align .item:nth-child(4) {
+  align-self: flex-start;
+}
+
+
+
+.grid-align-tracks {
+/* justify-content alinea respecto a los tracks de su eje principal, el flow por defecto es horizontal (X) */
+  display: grid;
+  grid-template-columns: repeat(3,200px);
+  grid-template-rows: repeat(2,200px);
+  justify-content: center;
+  justify-content: space-between;
+  /* align-content alinea los tracks de su eje principal, el por por defecto es vertical (Y)*/
+
+}
+
+
+
+
+
+
+.grid-min-max {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(4, minmax(min-content,200px));
+  grid-template-columns: repeat(4, minmax(max-content,200px));
+  grid-template-columns: repeat(4, minmax(min-content,max-content));
+}
+
+
+.grid-repeat {
+  display: grid;
+  grid-template-columns: repeat(4,10% 20% 30% 40%);
+  grid-template-columns: repeat(3,10% 20% 30% 40%);
+  grid-template-columns: repeat(2,10% 20% 30% 40%);
+  grid-template-columns: repeat(1,10% 20% 30% 40%);
+}
+
+
+/* use de auto-fit y auto-fill */
+.grid-dynamics {
+  display: grid;
+  grid-template-columns: repeat(4,100px);
+  /* auto-fill rellena la grid con tracks generados dinámicamente */
+  grid-template-columns: repeat(auto-fill,100px);
+  /* auto-fit ajusta la grid con los tracks existentes */
+  grid-template-columns: repeat(auto-fit,100px);
+  grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
 }
