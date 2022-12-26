@@ -1,0 +1,89 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  display: grid;
+  margin: 0;
+  min-height: 100vh;
+  grid-template-columns: repeat(6,1fr);
+  grid-template-rows: repeat(5,auto);
+  grid-template-areas: 
+  "header header header header header header"
+  "nav-bar nav-bar nav-bar nav-bar nav-bar nav-bar"
+  "uc-left uc-left uc-center uc-center uc-right uc-right"
+  "middle-content middle-content middle-content lower-content lower-content lower-content"
+  "footer footer footer footer footer footer";
+}
+
+body > * {
+  background-color: #665;
+  border: medium solid #223;
+}
+
+h2 {
+  text-align: center;
+}
+
+
+.header {
+  grid-area: header;
+  background-color: grey;
+}
+
+.nav-bar {
+  grid-area: nav-bar;
+  background-color: antiquewhite;
+}
+
+.uc-left {
+  grid-area: uc-left;
+  background-color: aqua;
+}
+
+.uc-center {
+  grid-area: uc-center;
+  background-color: aquamarine;
+}
+
+.uc-right {
+  grid-area: uc-right;
+  background-color: beige;
+}
+
+.middle-content {
+  grid-area: middle-content;
+  background-color: burlywood;
+}
+
+.lower-content {
+  grid-area: lower-content;
+  background-color: bisque;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: blanchedalmond;
+}
+
+
+@media screen and (min-width: 1024px){
+  body {
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(5,auto);
+    grid-template-areas: 
+    "header header header header header"
+    "nav-bar uc-left uc-center uc-center uc-right"
+    "nav-bar middle-content middle-content middle-content middle-content"
+    "nav-bar lower-content lower-content lower-content lower-content"
+    "footer footer footer footer footer";
+  }
+}
