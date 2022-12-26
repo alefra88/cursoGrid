@@ -60,6 +60,12 @@ img {
   border: medium solid #999;
 }
 
+.sub-item {
+  padding: 1rem;
+  background-color: #ddd;
+  border: medium solid #ccc;
+}
+
 .grid-explicit {
   display: grid;
   /* Grid de 3cx3r */
@@ -311,4 +317,23 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
 
+}
+
+.grid-nested {
+  display: grid;
+  /* grid 3x2 */
+  grid-template-columns: repeat(3,1fr);
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(4,1fr);
+}
+
+/* para que funcione subgrid hay que hacer lo siguiente */
+.subgrid {
+  grid-column: span 3;
+  grid-row: 1 / 3;
 }
